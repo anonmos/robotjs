@@ -904,4 +904,5 @@ NAN_MODULE_INIT(InitAll)
 		Nan::GetFunction(Nan::New<FunctionTemplate>(setXDisplayName)).ToLocalChecked());
 }
 
-NODE_MODULE(robotjs, InitAll)
+// Hack update: https://github.com/electron/electron/issues/18397
+NAN_MODULE_WORKER_ENABLED(robotjs, InitAll)
